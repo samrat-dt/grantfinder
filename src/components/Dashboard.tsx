@@ -1,11 +1,14 @@
 import { Calendar, Bell } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button"; // Added missing import
 import { useState } from "react";
 import { DashboardHeader } from "./dashboard/Header";
 import { SearchFilters } from "./dashboard/SearchFilters";
 import { GrantCard } from "./dashboard/GrantCard";
 import { ResourceCard } from "./dashboard/ResourceCard";
+import { DeadlinesCard } from "./dashboard/DeadlinesCard";
+import { NotificationsCard } from "./dashboard/NotificationsCard";
 
 const mockGrants = [
   {
@@ -152,7 +155,7 @@ export const Dashboard = () => {
   const grantTypes = Array.from(new Set(mockGrants.map(grant => grant.type)));
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
+    <div className="container mx-auto p-6 space-y-6 transition-all duration-300">
       <DashboardHeader notificationCount={mockNotifications.length} />
       
       <SearchFilters
@@ -164,76 +167,14 @@ export const Dashboard = () => {
       />
 
       <div className="grid md:grid-cols-3 gap-6">
-        {/* Upcoming Deadlines */}
-        <Card className="animate-fade-in">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-5 w-5 text-primary" />
-              Upcoming Deadlines
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-4">
-              {mockGrants
-                .sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime())
-                .slice(0, 3)
-                .map((grant) => (
-                  <li key={grant.id} className="flex justify-between items-center">
-                    <span className="text-sm font-medium">{grant.name}</span>
-                    <Badge variant={
-                      new Date(grant.deadline).getTime() - new Date().getTime() < 7 * 24 * 60 * 60 * 1000
-                        ? "destructive"
-                        : "outline"
-                    }>
-                      {new Date(grant.deadline).toLocaleDateString()}
-                    </Badge>
-                  </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Notifications */}
-        <Card className="animate-fade-in">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Bell className="h-5 w-5 text-primary" />
-              Recent Notifications
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-4">
-              {mockNotifications.map((notification) => (
-                <li key={notification.id} className="space-y-1">
-                  <div className="flex justify-between">
-                    <span className="font-medium flex items-center gap-2">
-                      {notification.title}
-                      <Badge variant={
-                        notification.priority === "high" ? "destructive" :
-                        notification.priority === "medium" ? "default" : "outline"
-                      }>
-                        {notification.priority}
-                      </Badge>
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      {new Date(notification.date).toLocaleDateString()}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600">{notification.description}</p>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        {/* Resources */}
+        <DeadlinesCard grants={mockGrants} />
+        <NotificationsCard notifications={mockNotifications} />
         <ResourceCard resources={resourceLinks} />
       </div>
 
-      {/* Available Grants Section */}
       <div className="space-y-4">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Available Grants and Incentives</h2>
+          <h2 className="text-2xl font-bold text-primary mb-4">Available Grants and Incentives</h2>
           <Button
             variant="outline"
             onClick={() => setShowAllGrants(!showAllGrants)}
