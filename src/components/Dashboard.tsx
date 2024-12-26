@@ -1,7 +1,7 @@
-import { Calendar, Bell } from "lucide-react";
+import { Calendar, Bell, Settings } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button"; // Added missing import
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { DashboardHeader } from "./dashboard/Header";
 import { SearchFilters } from "./dashboard/SearchFilters";
@@ -139,7 +139,11 @@ const resourceLinks = [
   }
 ];
 
-export const Dashboard = () => {
+interface DashboardProps {
+  onEditProfile: () => void;
+}
+
+export const Dashboard = ({ onEditProfile }: DashboardProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showAllGrants, setShowAllGrants] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -156,7 +160,10 @@ export const Dashboard = () => {
 
   return (
     <div className="container mx-auto p-6 space-y-6 transition-all duration-300">
-      <DashboardHeader notificationCount={mockNotifications.length} />
+      <DashboardHeader 
+        notificationCount={mockNotifications.length} 
+        onEditProfile={onEditProfile}
+      />
       
       <SearchFilters
         searchTerm={searchTerm}

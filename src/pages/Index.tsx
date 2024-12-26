@@ -1,30 +1,59 @@
 import { useState } from "react";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import { Dashboard } from "@/components/Dashboard";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 const Index = () => {
   const [isRegistered, setIsRegistered] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEditProfile = () => {
+    setIsEditing(true);
+    setIsRegistered(false);
+  };
+
+  const handleBackToDashboard = () => {
+    setIsEditing(false);
+    setIsRegistered(true);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 transition-all duration-300">
       {!isRegistered ? (
         <div className="container mx-auto py-12 px-4">
           <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-primary mb-4">
-                Welcome to StartupGrants India
-              </h1>
+            {isEditing && (
+              <Button
+                variant="ghost"
+                onClick={handleBackToDashboard}
+                className="mb-6 hover:scale-105 transition-all duration-300 text-primary"
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back to Dashboard
+              </Button>
+            )}
+            <div className="text-center mb-8 animate-fade-in">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <img src="/logo.svg" alt="Grant Route" className="h-12 w-12" />
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Grant Route
+                </h1>
+              </div>
               <p className="text-gray-600">
-                Complete your profile to discover relevant grants and incentives for your startup
+                {isEditing 
+                  ? "Update your startup profile to discover more relevant grants"
+                  : "Complete your profile to discover relevant grants and incentives for your startup"
+                }
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
               <RegistrationForm onComplete={() => setIsRegistered(true)} />
             </div>
           </div>
         </div>
       ) : (
-        <Dashboard />
+        <Dashboard onEditProfile={handleEditProfile} />
       )}
     </div>
   );
