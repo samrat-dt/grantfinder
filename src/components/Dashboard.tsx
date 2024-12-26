@@ -1,9 +1,11 @@
-import { Bell, BookOpen, Calendar, Filter, Search } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Calendar, Bell } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { DashboardHeader } from "./dashboard/Header";
+import { SearchFilters } from "./dashboard/SearchFilters";
+import { GrantCard } from "./dashboard/GrantCard";
+import { ResourceCard } from "./dashboard/ResourceCard";
 
 const mockGrants = [
   {
@@ -14,7 +16,18 @@ const mockGrants = [
     type: "Funding",
     amount: "₹20,00,000",
     status: "Open",
-    applicationLink: "https://startupindia.gov.in",
+    applicationLink: "https://startupindia.gov.in/content/sih/en/government-schemes/seed-fund-scheme.html",
+    details: "The Startup India Seed Fund Scheme aims to provide financial assistance to startups for proof of concept, prototype development, product trials, market entry, and commercialization.",
+    resources: [
+      {
+        title: "Application Guidelines",
+        url: "https://startupindia.gov.in/content/dam/invest-india/Templates/public/198117.pdf"
+      },
+      {
+        title: "Eligibility Criteria",
+        url: "https://startupindia.gov.in/content/sih/en/government-schemes/seed-fund-scheme.html#eligibility"
+      }
+    ]
   },
   {
     id: 2,
@@ -24,7 +37,14 @@ const mockGrants = [
     type: "Tax Benefit",
     amount: "Up to 100% tax exemption",
     status: "Open",
-    applicationLink: "https://dpiit.gov.in",
+    applicationLink: "https://dpiit.gov.in/startup-india",
+    details: "Under Section 80-IAC of the Income Tax Act, eligible startups can get a 100% tax exemption on profit for 3 consecutive years out of 10 years since incorporation.",
+    resources: [
+      {
+        title: "Tax Exemption Process",
+        url: "https://www.startupindia.gov.in/content/sih/en/startupgov/tax-exemption.html"
+      }
+    ]
   },
   {
     id: 3,
@@ -35,6 +55,8 @@ const mockGrants = [
     amount: "₹5,00,000",
     status: "Closing Soon",
     applicationLink: "https://startupkarnataka.gov.in",
+    details: "A competition aimed at fostering innovation in the state.",
+    resources: []
   },
   {
     id: 4,
@@ -45,6 +67,8 @@ const mockGrants = [
     amount: "₹10,00,000",
     status: "Open",
     applicationLink: "https://wep.gov.in",
+    details: "A platform to support women entrepreneurs with funding and resources.",
+    resources: []
   },
   {
     id: 5,
@@ -55,6 +79,8 @@ const mockGrants = [
     amount: "₹15,00,000",
     status: "Open",
     applicationLink: "https://msme.gov.in",
+    details: "Financial assistance for technology upgrades in manufacturing.",
+    resources: []
   }
 ];
 
@@ -85,27 +111,27 @@ const mockNotifications = [
 const resourceLinks = [
   {
     title: "Guide to Startup India Registration",
-    url: "#",
+    url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
     category: "Registration",
   },
   {
     title: "Tax Benefits Overview",
-    url: "#",
+    url: "https://www.startupindia.gov.in/content/sih/en/startupgov/tax-exemption.html",
     category: "Tax",
   },
   {
     title: "State-wise Incentive Programs",
-    url: "#",
+    url: "https://www.startupindia.gov.in/content/sih/en/government-schemes.html",
     category: "Regional",
   },
   {
     title: "Application Guidelines",
-    url: "#",
+    url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
     category: "Help",
   },
   {
     title: "Document Checklist",
-    url: "#",
+    url: "https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Application_for_Recognition_Checklist.pdf",
     category: "Help",
   }
 ];
@@ -126,57 +152,20 @@ export const Dashboard = () => {
   const grantTypes = Array.from(new Set(mockGrants.map(grant => grant.type)));
 
   return (
-    <div className="container mx-auto p-6 space-y-6 animate-fade-in">
-      {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-        <div>
-          <h1 className="text-3xl font-bold text-primary">Welcome back!</h1>
-          <p className="text-gray-600 mt-2">Your startup growth journey starts here</p>
-        </div>
-        <Button variant="outline" className="gap-2">
-          <Bell className="h-4 w-4" />
-          <span className="bg-accent text-white rounded-full px-2 py-0.5 text-xs">
-            {mockNotifications.length}
-          </span>
-        </Button>
-      </div>
+    <div className="container mx-auto p-6 space-y-6">
+      <DashboardHeader notificationCount={mockNotifications.length} />
+      
+      <SearchFilters
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        selectedType={selectedType}
+        setSelectedType={setSelectedType}
+        grantTypes={grantTypes}
+      />
 
-      {/* Search and Filter Section */}
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-          <Input
-            placeholder="Search grants and incentives..."
-            className="pl-10"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-        <div className="flex gap-2 flex-wrap">
-          <Button
-            variant={selectedType === null ? "default" : "outline"}
-            onClick={() => setSelectedType(null)}
-            className="whitespace-nowrap"
-          >
-            All Types
-          </Button>
-          {grantTypes.map((type) => (
-            <Button
-              key={type}
-              variant={selectedType === type ? "default" : "outline"}
-              onClick={() => setSelectedType(type)}
-              className="whitespace-nowrap"
-            >
-              {type}
-            </Button>
-          ))}
-        </div>
-      </div>
-
-      {/* Dashboard Grid */}
       <div className="grid md:grid-cols-3 gap-6">
         {/* Upcoming Deadlines */}
-        <Card>
+        <Card className="animate-fade-in">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Calendar className="h-5 w-5 text-primary" />
@@ -205,7 +194,7 @@ export const Dashboard = () => {
         </Card>
 
         {/* Notifications */}
-        <Card>
+        <Card className="animate-fade-in">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Bell className="h-5 w-5 text-primary" />
@@ -238,93 +227,34 @@ export const Dashboard = () => {
         </Card>
 
         {/* Resources */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-primary" />
-              Resources
-            </CardTitle>
-            <CardDescription>Helpful information and guidelines</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-3">
-              {resourceLinks.map((resource) => (
-                <li key={resource.title} className="flex items-center justify-between">
-                  <Button variant="link" className="text-left p-0">
-                    {resource.title}
-                  </Button>
-                  <Badge variant="secondary">{resource.category}</Badge>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+        <ResourceCard resources={resourceLinks} />
       </div>
 
       {/* Available Grants Section */}
-      <Card className="mt-8">
-        <CardHeader className="flex flex-row items-center justify-between">
-          <div>
-            <CardTitle>Available Grants and Incentives</CardTitle>
-            <CardDescription>
-              {searchTerm || selectedType
-                ? `Showing ${filteredGrants.length} matching results`
-                : "Matching opportunities based on your profile"}
-            </CardDescription>
-          </div>
+      <div className="space-y-4">
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl font-bold">Available Grants and Incentives</h2>
           <Button
             variant="outline"
             onClick={() => setShowAllGrants(!showAllGrants)}
-            className="whitespace-nowrap"
+            className="whitespace-nowrap hover:scale-105 transition-transform"
           >
             {showAllGrants ? "Show Less" : "View All"}
           </Button>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            {displayedGrants.length > 0 ? (
-              displayedGrants.map((grant) => (
-                <div
-                  key={grant.id}
-                  className="border rounded-lg p-4 hover:border-primary transition-colors"
-                >
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-semibold">{grant.name}</h3>
-                        <Badge>{grant.type}</Badge>
-                        <Badge variant={
-                          grant.status === "Closing Soon" ? "destructive" : "outline"
-                        }>
-                          {grant.status}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-gray-600">{grant.eligibility}</p>
-                      <p className="text-sm font-medium text-primary">{grant.amount}</p>
-                    </div>
-                    <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
-                      <Button
-                        variant="outline"
-                        onClick={() => window.open(grant.applicationLink, "_blank")}
-                      >
-                        Apply Now
-                      </Button>
-                      <Button size="sm">View Details</Button>
-                    </div>
-                  </div>
-                  <div className="mt-4 text-sm text-gray-500">
-                    Deadline: {new Date(grant.deadline).toLocaleDateString()}
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="text-center py-8 text-gray-500">
-                No grants found matching your criteria. Try adjusting your search or filters.
-              </div>
-            )}
-          </div>
-        </CardContent>
-      </Card>
+        </div>
+        
+        <div className="space-y-6">
+          {displayedGrants.length > 0 ? (
+            displayedGrants.map((grant) => (
+              <GrantCard key={grant.id} grant={grant} />
+            ))
+          ) : (
+            <div className="text-center py-8 text-gray-500 animate-fade-in">
+              No grants found matching your criteria. Try adjusting your search or filters.
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
