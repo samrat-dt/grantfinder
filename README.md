@@ -2,6 +2,11 @@
 
 Grant Route is a platform that helps Indian startups discover and apply for grants, tax incentives, and other benefits. By simplifying the process and offering tailored recommendations, it ensures startups can access valuable resources to grow and thrive.
 
+## Demo
+
+Try the mock-up version of Grant Route here:  
+[https://grantfinder-nectar.lovable.app/](https://grantfinder-nectar.lovable.app/)
+
 ---
 
 ## Problem
@@ -39,6 +44,7 @@ Grant Route addresses this problem by providing:
 
 ---
 
+
 ## Market Opportunity
 
 India’s startup ecosystem is growing rapidly:
@@ -68,8 +74,3 @@ Grant Route aims to bridge the gap between startups and these opportunities, unl
 We welcome feedback and contributions to improve Grant Route. Feel free to open an issue or submit a pull request.
 
 
----
-
-## License
-
-Grant Route is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
