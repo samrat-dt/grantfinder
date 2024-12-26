@@ -1,69 +1,75 @@
-# Welcome to your Lovable project
+# Grant Route
 
-## Project info
+Grant Route is a platform that helps Indian startups discover and apply for grants, tax incentives, and other benefits. By simplifying the process and offering tailored recommendations, it ensures startups can access valuable resources to grow and thrive.
 
-**URL**: https://lovable.dev/projects/9107ab37-9796-4e6d-ba63-bd4c1b9a03bc
+---
 
-## How can I edit this code?
+## Problem
 
-There are several ways of editing your application.
+Starting a business is challenging, with a high failure rate:
+- 30% of startups fail within three years.
+- 50% fail within five years.
+- 70% don’t make it past ten years.
 
-**Use Lovable**
+While numerous grants, tax incentives, and support programs exist to assist startups, these resources are:
+- Difficult to find.
+- Complex to understand.
+- Time-consuming to apply for.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9107ab37-9796-4e6d-ba63-bd4c1b9a03bc) and start prompting.
+This often leads to missed opportunities for startups.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Solution
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Grant Route addresses this problem by providing:
+1. A centralized platform to track all relevant grants, tax incentives, and benefits for Indian startups.
+2. Personalized recommendations based on the startup’s location, sector, size, and growth stage.
+3. Notifications for new and emerging opportunities as they become available.
+4. Plans for future automation to streamline the application process.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Features
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Personalized Recommendations**: Tailored lists of grants and incentives based on startup-specific information.
+- **Notifications**: Alerts for new or updated schemes that match a startup’s profile.
+- **Comprehensive Resource Database**: A centralized collection of all applicable grants, tax benefits, and support schemes.
+- **Automation (Planned)**: Automatic application submissions for selected grants and schemes.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Market Opportunity
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+India’s startup ecosystem is growing rapidly:
+- Over 70,000 startups are currently active.
+- Government initiatives like Startup India and various tax incentives are designed to foster innovation and entrepreneurship.
 
-**Edit a file directly in GitHub**
+Grant Route aims to bridge the gap between startups and these opportunities, unlocking significant value for the ecosystem.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Roadmap
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Phase 1: Awareness and Research
+- Compile a database of grants, incentives, and benefits for startups.
+- Build awareness through content creation and social media.
 
-## What technologies are used for this project?
+### Phase 2: Launch the Platform
+- Release an MVP with personalized recommendations and notification features.
 
-This project is built with .
+### Phase 3: Automation
+- Enable automated application submissions for grants and incentives.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## Contribution
 
-Simply open [Lovable](https://lovable.dev/projects/9107ab37-9796-4e6d-ba63-bd4c1b9a03bc) and click on Share -> Publish.
+We welcome feedback and contributions to improve Grant Route. Feel free to open an issue or submit a pull request.
 
-## I want to use a custom domain - is that possible?
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+## License
+
+Grant Route is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
