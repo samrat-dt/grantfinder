@@ -4,8 +4,7 @@ Grant Route is a platform that helps Indian startups discover and apply for gran
 
 ## Demo
 
-Try the mock-up version of Grant Route here:  
-[https://grantfinder-nectar.lovable.app/](https://grantfinder-nectar.lovable.app/)
+Try the mock-up version of [Grant Route](https://grantfinder-nectar.lovable.app/).
 
 ---
 
