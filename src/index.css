@@ -53,7 +53,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-[#E2E2E2] dark:border-[#4A4A4A];
   }
 
   body {
