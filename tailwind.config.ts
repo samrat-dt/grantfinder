@@ -22,11 +22,11 @@ export default {
         border: "hsl(var(--border))",
         background: {
           DEFAULT: "#FFFFFF",
-          secondary: "#F5F5F7",
+          secondary: "#F8F9FA",
         },
         foreground: {
-          DEFAULT: "#1D1D1F",
-          secondary: "#86868B",
+          DEFAULT: "#000000",
+          secondary: "#4A4A4A",
         },
         primary: {
           DEFAULT: "#000000",
@@ -36,16 +36,16 @@ export default {
           dark: "#003366",
         },
         secondary: {
-          DEFAULT: "#F5F5F7",
-          foreground: "#1D1D1F",
+          DEFAULT: "#F8F9FA",
+          foreground: "#000000",
         },
         destructive: {
           DEFAULT: "#FF3B30",
           foreground: "#FFFFFF",
         },
         muted: {
-          DEFAULT: "#F5F5F7",
-          foreground: "#86868B",
+          DEFAULT: "#F8F9FA",
+          foreground: "#4A4A4A",
         },
         accent: {
           DEFAULT: "#007AFF",
@@ -53,11 +53,11 @@ export default {
         },
         card: {
           DEFAULT: "#FFFFFF",
-          foreground: "#1D1D1F",
+          foreground: "#000000",
         },
         text: {
-          DEFAULT: "#1D1D1F",
-          muted: "#86868B",
+          DEFAULT: "#000000",
+          muted: "#4A4A4A",
         },
         status: {
           success: "#34C759",
@@ -66,13 +66,13 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-        display: ['Poppins', 'sans-serif'],
+        sans: ['SF Pro Display', 'system-ui', 'sans-serif'],
+        display: ['SF Pro Display', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         DEFAULT: "var(--radius)",
-        button: "1rem",
-        card: "1.25rem",
+        button: "0.75rem",
+        card: "1rem",
         input: "0.75rem",
       },
       fontSize: {

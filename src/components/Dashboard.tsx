@@ -31,60 +31,62 @@ export const Dashboard = ({ onEditProfile }: DashboardProps) => {
   const displayedGrants = showAllGrants ? filteredGrants : filteredGrants.slice(0, 3);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-      <DashboardHeader 
-        notificationCount={mockNotifications.length} 
-        onEditProfile={onEditProfile}
-      />
-      
-      <div className="grid md:grid-cols-3 gap-6">
-        <DeadlinesCard grants={mockGrants} />
-        <NotificationsCard notifications={mockNotifications} />
-        <ResourceCard resources={resourceLinks} />
-      </div>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
+        <DashboardHeader 
+          notificationCount={mockNotifications.length} 
+          onEditProfile={onEditProfile}
+        />
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <DeadlinesCard grants={mockGrants} />
+          <NotificationsCard notifications={mockNotifications} />
+          <ResourceCard resources={resourceLinks} />
+        </div>
 
-      <div className="bg-white rounded-2xl shadow-sm p-8 border border-border/5">
-        <div className="space-y-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-            <h2 className="text-2xl font-semibold text-primary tracking-tight">
-              Available Grants and Incentives
-            </h2>
-            <div className="w-full lg:w-auto">
-              <SearchFilters
-                searchTerm={searchTerm}
-                setSearchTerm={setSearchTerm}
-                selectedType={selectedType}
-                setSelectedType={setSelectedType}
-                selectedStatus={selectedStatus}
-                setSelectedStatus={setSelectedStatus}
-                grantTypes={grantTypes}
-                statuses={statuses}
-              />
-            </div>
-          </div>
-          
-          <div className="space-y-6">
-            {displayedGrants.length > 0 ? (
-              <>
-                {displayedGrants.map((grant) => (
-                  <GrantCard key={grant.id} grant={grant} />
-                ))}
-                {filteredGrants.length > 3 && (
-                  <div className="flex justify-center">
-                    <button
-                      onClick={() => setShowAllGrants(!showAllGrants)}
-                      className="text-primary hover:text-primary/80 font-medium transition-colors"
-                    >
-                      {showAllGrants ? "Show Less" : "View All"}
-                    </button>
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className="text-center py-8 text-muted-foreground">
-                No grants found matching your criteria.
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100/10">
+          <div className="p-8 space-y-8">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+              <h2 className="text-2xl font-semibold text-foreground tracking-tight">
+                Available Grants and Incentives
+              </h2>
+              <div className="w-full lg:w-auto">
+                <SearchFilters
+                  searchTerm={searchTerm}
+                  setSearchTerm={setSearchTerm}
+                  selectedType={selectedType}
+                  setSelectedType={setSelectedType}
+                  selectedStatus={selectedStatus}
+                  setSelectedStatus={setSelectedStatus}
+                  grantTypes={grantTypes}
+                  statuses={statuses}
+                />
               </div>
-            )}
+            </div>
+            
+            <div className="space-y-6">
+              {displayedGrants.length > 0 ? (
+                <>
+                  {displayedGrants.map((grant) => (
+                    <GrantCard key={grant.id} grant={grant} />
+                  ))}
+                  {filteredGrants.length > 3 && (
+                    <div className="flex justify-center pt-4">
+                      <button
+                        onClick={() => setShowAllGrants(!showAllGrants)}
+                        className="text-accent hover:text-accent/80 font-medium transition-colors"
+                      >
+                        {showAllGrants ? "Show Less" : "View All"}
+                      </button>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="text-center py-12 text-muted-foreground">
+                  No grants found matching your criteria.
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
