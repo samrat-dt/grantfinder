@@ -18,34 +18,40 @@ export default {
       },
     },
     extend: {
-      fontFamily: {
-        "space-grotesk": ["Space Grotesk", "sans-serif"],
-      },
       colors: {
+        uber: {
+          black: "#000000",
+          white: "#FFFFFF",
+          blue: "#276EF1",
+          "light-gray": "#E2E2E2",
+          "dark-gray": "#4A4A4A",
+          error: "#FF6F61",
+          success: "#1AD760",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#000000",
+          foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#FFFFFF",
+          foreground: "#000000",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#276EF1",
+          foreground: "#FFFFFF",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "#FF6F61",
+          foreground: "#FFFFFF",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#E2E2E2",
+          foreground: "#4A4A4A",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -55,6 +61,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

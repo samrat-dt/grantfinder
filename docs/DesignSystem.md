@@ -2,10 +2,9 @@
 
 ## Typography
 
-We use Space Grotesk as our primary font family for its modern, geometric design that appeals to Gen Z audiences while maintaining readability.
+We use Inter as our primary font family, following Uber's design principles for clean, modern typography.
 
 ### Font Weights
-- Light: 300
 - Regular: 400
 - Medium: 500
 - Semi-bold: 600
@@ -14,60 +13,68 @@ We use Space Grotesk as our primary font family for its modern, geometric design
 ## Color Palette
 
 ### Light Theme
-- Background: Pure White (#FFFFFF)
-- Foreground: Near Black (#0A0A0A)
-- Primary: Vibrant Purple (#8B5CF6)
-- Accent: Electric Blue (#2DD4BF)
-- Muted: Light Gray (#F4F4F5)
+- Primary: Black (#000000)
+- Secondary: White (#FFFFFF)
+- Accent: Blue (#276EF1)
+- Light Gray: #E2E2E2
+- Dark Gray: #4A4A4A
+- Error: #FF6F61
+- Success: #1AD760
 
 ### Dark Theme
-- Background: Rich Black (#0A0A0A)
-- Foreground: Off White (#F2F2F2)
-- Primary: Neon Purple (#8B5CF6)
-- Accent: Bright Blue (#2DD4BF)
-- Muted: Dark Gray (#27272A)
+- Primary: White (#FFFFFF)
+- Secondary: Black (#000000)
+- Accent: Blue (#276EF1)
+- Light Gray: #4A4A4A
+- Dark Gray: #E2E2E2
+- Error: #FF6F61
+- Success: #1AD760
 
 ## Components
 
-### Cards
-- Modern, floating design with subtle shadows
-- Smooth hover animations
-- Rounded corners (border-radius: 0.75rem)
-
 ### Buttons
-- Bold, high-contrast design
-- Hover and active states with elevation changes
-- Smooth transitions for all interactions
+- Clean, minimal design with bold colors
+- Consistent padding and rounded corners
+- Clear hover and active states
+- Disabled state styling
+
+### Cards
+- Subtle shadows and borders
+- Clean backgrounds
+- Consistent spacing
+- Smooth hover transitions
 
 ### Forms
-- Clean, minimal design
+- Minimalist input styling
 - Clear focus states
-- Animated validation feedback
+- Consistent validation feedback
+- Smooth transitions
 
 ## Animations
 
 ### Micro-interactions
-- Subtle float animation for cards
-- Smooth fade-ins for content
-- Scale transforms on hover
+- Subtle hover effects
+- Smooth transitions (300ms)
+- Fade-in animations for content
+- Loading states
 
 ### Transitions
 - Duration: 300ms
 - Timing: ease-in-out
-- Used consistently across all interactive elements
+- Consistent across all interactive elements
 
 ## Accessibility
 
-- High contrast ratios meeting WCAG 2.1 standards
-- Clear focus indicators
-- Semantic HTML structure
+- WCAG 2.1 AA compliant
+- High contrast ratios
+- Keyboard navigation support
 - Screen reader friendly
 
 ## Responsive Design
 
 - Mobile-first approach
 - Fluid typography
-- Adaptive layouts
+- Consistent spacing
 - Breakpoints:
   - sm: 640px
   - md: 768px
@@ -77,8 +84,8 @@ We use Space Grotesk as our primary font family for its modern, geometric design
 
 ## Best Practices
 
-1. Maintain consistent spacing using the design system's scale
-2. Use animations sparingly and purposefully
-3. Ensure all interactive elements have clear hover and focus states
-4. Keep the interface clean and uncluttered
-5. Prioritize readability over decoration
+1. Use consistent spacing with Tailwind utilities
+2. Maintain high contrast for accessibility
+3. Keep animations subtle and purposeful
+4. Follow mobile-first responsive design
+5. Ensure consistent component behavior
