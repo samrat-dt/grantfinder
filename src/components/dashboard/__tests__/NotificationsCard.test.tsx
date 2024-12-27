@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import '@testing-library/jest-dom';
 import { NotificationsCard } from '../NotificationsCard';
 
 const mockNotifications = [
@@ -8,6 +9,13 @@ const mockNotifications = [
     description: "Test Description",
     date: "2024-03-01",
     priority: "high",
+  },
+  {
+    id: 2,
+    title: "Another Notification",
+    description: "Another Description",
+    date: "2024-03-02",
+    priority: "medium",
   },
 ];
 
@@ -19,9 +27,17 @@ describe('NotificationsCard', () => {
     expect(screen.getByText('Test Description')).toBeInTheDocument();
   });
 
-  it('displays correct priority badge', () => {
+  it('displays correct priority badges', () => {
     render(<NotificationsCard notifications={mockNotifications} />);
-    const badge = screen.getByText('high');
-    expect(badge).toHaveClass('destructive');
+    const highPriorityBadge = screen.getByText('high');
+    const mediumPriorityBadge = screen.getByText('medium');
+    expect(highPriorityBadge).toHaveClass('destructive');
+    expect(mediumPriorityBadge).toHaveClass('default');
+  });
+
+  it('formats dates correctly', () => {
+    render(<NotificationsCard notifications={mockNotifications} />);
+    expect(screen.getByText('3/1/2024')).toBeInTheDocument();
+    expect(screen.getByText('3/2/2024')).toBeInTheDocument();
   });
 });
