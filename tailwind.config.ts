@@ -21,7 +21,7 @@ export default {
       colors: {
         border: "hsl(var(--border))",
         background: {
-          DEFAULT: "#FBFBFD",
+          DEFAULT: "#FFFFFF",
           secondary: "#F5F5F7",
         },
         foreground: {
@@ -31,7 +31,7 @@ export default {
         primary: {
           DEFAULT: "#000000",
           foreground: "#FFFFFF",
-          accent: "#0066CC",
+          accent: "#007AFF",
           light: "#E8F2FF",
           dark: "#003366",
         },
@@ -48,7 +48,7 @@ export default {
           foreground: "#86868B",
         },
         accent: {
-          DEFAULT: "#0066CC",
+          DEFAULT: "#007AFF",
           foreground: "#FFFFFF",
         },
         card: {

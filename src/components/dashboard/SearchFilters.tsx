@@ -29,12 +29,12 @@ export const SearchFilters = ({
   grantTypes,
   statuses,
 }: SearchFiltersProps) => (
-  <div className="flex flex-wrap gap-4 w-full md:w-auto">
-    <div className="relative flex-1 min-w-[240px]">
-      <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+  <div className="flex flex-col sm:flex-row gap-4 w-full">
+    <div className="relative flex-1">
+      <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
       <Input
         placeholder="Search grants..."
-        className="pl-10 bg-secondary border-none focus:ring-2 focus:ring-primary/50"
+        className="pl-11 bg-secondary border-none focus:ring-2 focus:ring-primary/50 h-12 rounded-full"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -43,7 +43,7 @@ export const SearchFilters = ({
       value={selectedType || "all"}
       onValueChange={(value) => setSelectedType(value === "all" ? null : value)}
     >
-      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50">
+      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50 h-12 rounded-full">
         <SelectValue placeholder="Grant Type" />
       </SelectTrigger>
       <SelectContent>
@@ -59,7 +59,7 @@ export const SearchFilters = ({
       value={selectedStatus || "all"}
       onValueChange={(value) => setSelectedStatus(value === "all" ? null : value)}
     >
-      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50">
+      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50 h-12 rounded-full">
         <SelectValue placeholder="Status" />
       </SelectTrigger>
       <SelectContent>
