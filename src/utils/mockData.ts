@@ -105,12 +105,12 @@ export const resourceLinks: Resource[] = [
   {
     title: "Guide to Startup India Registration",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
-    category: "Registration",
+    category: "Getting Started",
   },
   {
     title: "Tax Benefits Overview",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/tax-exemption.html",
-    category: "Tax",
+    category: "Finance",
   },
   {
     title: "State-wise Incentive Programs",
@@ -120,11 +120,11 @@ export const resourceLinks: Resource[] = [
   {
     title: "Application Guidelines",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
-    category: "Help",
+    category: "Documentation",
   },
   {
     title: "Document Checklist",
     url: "https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Application_for_Recognition_Checklist.pdf",
-    category: "Help",
+    category: "Documentation",
   }
 ];
