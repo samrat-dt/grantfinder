@@ -19,37 +19,30 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        // Primary Colors
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#0F172A", // Dark Navy Blue
+          accent: "#2563EB", // Vivid Blue
+          light: "#93C5FD", // Light Blue
+          dark: "#1E293B", // Slate Gray
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        // Background Colors
+        background: {
+          DEFAULT: "#F8FAFC", // Light Grayish Blue
+          secondary: "#FFFFFF", // Pure White
         },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+        // Text Colors
+        text: {
+          DEFAULT: "#0F172A", // Dark
+          muted: "#64748B", // Muted Gray
         },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+        // Status Colors
+        status: {
+          success: "#22C55E",
+          warning: "#F59E0B",
+          error: "#EF4444",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
+        // Uber Design System Colors
         uber: {
           black: "#000000",
           white: "#FFFFFF",
@@ -63,10 +56,29 @@ export default {
           "notification-text": "#000000",
         },
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      fontSize: {
+        // Desktop
+        "heading-desktop": ["3rem", { lineHeight: "1.2" }],
+        "subheading-desktop": ["2rem", { lineHeight: "1.3" }],
+        // Mobile
+        "heading-mobile": ["2rem", { lineHeight: "1.2" }],
+        "subheading-mobile": ["1.5rem", { lineHeight: "1.3" }],
+        // Body and Caption
+        body: ["1rem", { lineHeight: "1.5" }],
+        caption: ["0.875rem", { lineHeight: "1.4" }],
+      },
       borderRadius: {
-        lg: "0.25rem",
-        md: "0.125rem",
-        sm: "0.125rem",
+        DEFAULT: "0.5rem",
+        button: "0.5rem",
+        card: "0.75rem",
+        input: "0.5rem",
+      },
+      boxShadow: {
+        card: "0px 4px 6px #E2E8F0",
+        elevated: "0px 8px 16px rgba(0, 0, 0, 0.1)",
       },
       keyframes: {
         "accordion-down": {

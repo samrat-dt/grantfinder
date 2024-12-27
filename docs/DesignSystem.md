@@ -1,8 +1,16 @@
-# Grant Route Design System
+# Uber-Inspired Design System
 
 ## Typography
 
 We use Inter as our primary font family, following Uber's design principles for clean, modern typography.
+
+### Font Sizes
+- Heading (Desktop): 48px / 3rem
+- Heading (Mobile): 32px / 2rem
+- Subheading (Desktop): 32px / 2rem
+- Subheading (Mobile): 24px / 1.5rem
+- Body Text: 16px / 1rem
+- Caption: 14px / 0.875rem
 
 ### Font Weights
 - Regular: 400
@@ -12,54 +20,64 @@ We use Inter as our primary font family, following Uber's design principles for 
 
 ## Color Palette
 
-### Core Colors
-- Black: #000000
-- White: #FFFFFF
-- Blue: #276EF1
-- Purple: #9B87F5
-- Light Gray: #E2E2E2
-- Dark Gray: #4A4A4A
-- Error: #FF1744
-- Success: #1AD760
-- Notification: #FEF7CD
-- Notification Text: #000000
+### Primary Colors
+- Base: #0F172A (Dark Navy Blue)
+- Accent: #2563EB (Vivid Blue)
+- Light: #93C5FD (Light Blue)
+- Dark: #1E293B (Slate Gray)
 
-### Theme Colors
-Light and dark mode colors are defined using HSL values for maximum flexibility.
+### Background Colors
+- Primary: #F8FAFC (Light Grayish Blue)
+- Secondary: #FFFFFF (Pure White)
+
+### Text Colors
+- Dark: #0F172A
+- Muted: #64748B
+
+### Status Colors
+- Success: #22C55E
+- Warning: #F59E0B
+- Error: #EF4444
 
 ## Components
 
 ### Buttons
-- Minimal rounded corners (2px)
+- Rounded corners (8px)
 - Clear hover and active states
-- Focus ring for accessibility
-- Scale animation on click
+- Primary and Secondary variants
+- Smooth transitions
 
 ### Cards
-- Subtle shadows with hover effect
-- Minimal rounded corners
+- Rounded corners (12px)
+- Subtle shadows
+- Hover elevation
 - Clean backgrounds
-- Smooth transitions
 
 ### Forms
-- Minimal styling
+- Rounded corners (8px)
 - Clear focus states
 - Consistent validation feedback
-- Smooth transitions
+- Modern input styling
+
+### Tables
+- Alternating row colors
+- Clear headers
+- Compact but readable
+- Responsive design
 
 ## Animations
 
 ### Micro-interactions
-- Subtle hover effects
-- Smooth transitions (300ms)
-- Scale animations for buttons
-- Fade-in animations for content
+- Button hover/active states
+- Card elevation changes
+- Form focus states
+- Modal transitions
 
 ### Motion Principles
 - Natural and fluid
 - Purpose-driven
 - Consistent timing
-- Responsive to user input
+- Responsive feedback
 
 ## Accessibility
 
@@ -72,11 +90,11 @@ Light and dark mode colors are defined using HSL values for maximum flexibility.
 ## Responsive Design
 
 Mobile-first approach with breakpoints:
-- sm: 640px
-- md: 768px
-- lg: 1024px
-- xl: 1280px
-- 2xl: 1400px
+- sm: 640px (Mobile)
+- md: 768px (Tablet)
+- lg: 1024px (Desktop)
+- xl: 1280px (Large Desktop)
+- 2xl: 1400px (Extra Large Desktop)
 
 ## Best Practices
 

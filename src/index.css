@@ -6,121 +6,157 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    --background: 220 14% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 0% 89%;
-    --muted-foreground: 0 0% 29%;
-    --accent: 217 89% 61%;
-    --accent-foreground: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 217 89% 61%;
-    --radius: 0.125rem;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 0%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 29%;
-    --muted-foreground: 0 0% 89%;
-    --accent: 217 89% 61%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 29%;
-    --input: 0 0% 29%;
-    --ring: 217 89% 61%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 19% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 27%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 19% 27%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62% 65%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 19% 27%;
+    --input: 217 19% 27%;
+    --ring: 224 76% 48%;
   }
 }
 
 @layer base {
   * {
-    @apply border-uber-light-gray dark:border-uber-dark-gray;
+    @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased min-h-screen;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-bold tracking-tight text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-heading-mobile md:text-heading-desktop font-bold tracking-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-subheading-mobile md:text-subheading-desktop font-bold tracking-tight;
   }
 
-  h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+  p {
+    @apply text-body leading-relaxed;
   }
 }
 
 @layer components {
   .uber-button {
-    @apply px-6 py-3 rounded-sm font-medium transition-all duration-300
-           bg-uber-black text-uber-white hover:bg-uber-dark-gray
+    @apply px-6 py-3 rounded-button font-medium transition-all duration-300
+           bg-primary-accent text-white hover:bg-primary-dark
            disabled:opacity-50 disabled:cursor-not-allowed
-           focus:outline-none focus:ring-2 focus:ring-uber-blue
+           focus:outline-none focus:ring-2 focus:ring-primary-accent/50
            active:transform active:scale-95;
   }
 
+  .uber-button-secondary {
+    @apply px-6 py-3 rounded-button font-medium transition-all duration-300
+           border border-text-muted text-primary
+           hover:bg-background-secondary hover:border-primary-accent
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-primary-accent/50;
+  }
+
   .uber-card {
-    @apply bg-white dark:bg-uber-black rounded-sm shadow-sm
-           border border-uber-light-gray dark:border-uber-dark-gray
-           p-6 transition-all duration-300
-           hover:shadow-md;
+    @apply bg-background-secondary rounded-card shadow-card
+           p-4 transition-all duration-300
+           hover:shadow-elevated;
   }
 
   .uber-input {
-    @apply bg-white dark:bg-uber-black border border-uber-light-gray
-           dark:border-uber-dark-gray rounded-sm px-4 py-3
-           focus:ring-2 focus:ring-uber-blue focus:border-transparent
+    @apply w-full px-4 py-3 rounded-input
+           border border-border
+           focus:ring-2 focus:ring-primary-accent focus:border-transparent
            transition-all duration-300
-           placeholder:text-gray-400;
+           placeholder:text-text-muted;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-uber-purple to-uber-blue 
-           bg-clip-text text-transparent font-bold;
+  .uber-table {
+    @apply w-full border-collapse;
   }
 
-  .uber-badge {
-    @apply inline-flex items-center rounded-sm px-2.5 py-0.5 text-xs font-medium
-           transition-colors focus:outline-none focus:ring-2 focus:ring-uber-blue
-           focus:ring-offset-2;
+  .uber-table th {
+    @apply bg-background px-4 py-3 text-left font-bold text-primary;
   }
 
-  .uber-badge-error {
-    @apply bg-uber-error text-white;
+  .uber-table tr:nth-child(even) {
+    @apply bg-background/50;
   }
 
-  .uber-badge-success {
-    @apply bg-uber-success text-white;
+  .uber-table td {
+    @apply px-4 py-3 border-t border-border;
   }
 
-  .uber-badge-notification {
-    @apply bg-uber-notification text-uber-notification-text;
+  .uber-modal-overlay {
+    @apply fixed inset-0 bg-primary/50 backdrop-blur-sm
+           transition-opacity duration-300;
+  }
+
+  .uber-modal {
+    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+           bg-background-secondary rounded-card shadow-elevated
+           p-6 max-w-md w-full mx-4
+           transition-all duration-300 animate-scale-in;
+  }
+
+  /* Responsive Grid System */
+  .uber-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+  }
+
+  /* Navigation */
+  .uber-nav {
+    @apply fixed top-0 w-full bg-background-secondary shadow-elevated
+           transition-transform duration-300 z-50;
+  }
+
+  .uber-nav-mobile {
+    @apply fixed inset-y-0 left-0 w-64 bg-background-secondary shadow-elevated
+           transform transition-transform duration-300 z-50
+           lg:translate-x-0 lg:static lg:w-auto;
+  }
+
+  /* Accessibility */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  /* Focus Styles */
+  .focus-visible {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-accent;
   }
 }
