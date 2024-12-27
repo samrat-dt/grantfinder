@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { RegistrationForm } from "@/components/RegistrationForm";
-import { Dashboard } from "@/components/Dashboard";
+import { RegistrationLayout } from "@/components/registration/RegistrationLayout";
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
@@ -48,12 +48,12 @@ const Index = () => {
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300">
-              <RegistrationForm onComplete={() => setIsRegistered(true)} />
+              <RegistrationLayout onComplete={() => setIsRegistered(true)} />
             </div>
           </div>
         </div>
       ) : (
-        <Dashboard onEditProfile={handleEditProfile} />
+        <DashboardLayout onEditProfile={handleEditProfile} />
       )}
     </div>
   );
