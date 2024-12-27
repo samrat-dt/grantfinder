@@ -1,6 +1,5 @@
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import {
   Select,
   SelectContent,
@@ -35,20 +34,20 @@ export const SearchFilters = ({
       <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
       <Input
         placeholder="Search grants..."
-        className="pl-10 bg-secondary border-none focus:ring-2 focus:ring-primary-accent"
+        className="pl-10 bg-secondary border-none focus:ring-2 focus:ring-primary/50"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
     <Select
-      value={selectedType || ""}
-      onValueChange={(value) => setSelectedType(value || null)}
+      value={selectedType || "all"}
+      onValueChange={(value) => setSelectedType(value === "all" ? null : value)}
     >
-      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary-accent">
+      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50">
         <SelectValue placeholder="Grant Type" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="">All Types</SelectItem>
+        <SelectItem value="all">All Types</SelectItem>
         {grantTypes.map((type) => (
           <SelectItem key={type} value={type}>
             {type}
@@ -57,14 +56,14 @@ export const SearchFilters = ({
       </SelectContent>
     </Select>
     <Select
-      value={selectedStatus || ""}
-      onValueChange={(value) => setSelectedStatus(value || null)}
+      value={selectedStatus || "all"}
+      onValueChange={(value) => setSelectedStatus(value === "all" ? null : value)}
     >
-      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary-accent">
+      <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50">
         <SelectValue placeholder="Status" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="">All Statuses</SelectItem>
+        <SelectItem value="all">All Statuses</SelectItem>
         {statuses.map((status) => (
           <SelectItem key={status} value={status}>
             {status}

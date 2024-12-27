@@ -1,3 +1,9 @@
+export interface Resource {
+  title: string;
+  url: string;
+  category?: string; // Made category optional to match existing data
+}
+
 export interface Grant {
   id: number;
   name: string;
@@ -8,13 +14,7 @@ export interface Grant {
   status: string;
   applicationLink: string;
   details?: string;
-  resources?: Resource[];
-}
-
-export interface Resource {
-  title: string;
-  url: string;
-  category: string;
+  resources: Resource[];
 }
 
 export interface Notification {
