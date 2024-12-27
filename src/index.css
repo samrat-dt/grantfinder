@@ -20,12 +20,12 @@
     --muted-foreground: 0 0% 29%;
     --accent: 217 89% 61%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 3 100% 69%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 89%;
     --input: 0 0% 89%;
     --ring: 217 89% 61%;
-    --radius: 0.5rem;
+    --radius: 0.125rem;
   }
 
   .dark {
@@ -43,7 +43,7 @@
     --muted-foreground: 0 0% 89%;
     --accent: 217 89% 61%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 3 100% 69%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     --border: 0 0% 29%;
     --input: 0 0% 29%;
@@ -53,11 +53,11 @@
 
 @layer base {
   * {
-    @apply border-[#E2E2E2] dark:border-[#4A4A4A];
+    @apply border-uber-light-gray dark:border-uber-dark-gray;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased min-h-screen;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -77,28 +77,50 @@
   }
 }
 
-/* Modern button styles */
-.uber-button {
-  @apply px-6 py-3 rounded-md font-medium transition-all duration-300
-         bg-uber-black text-uber-white hover:bg-uber-dark-gray
-         disabled:opacity-50 disabled:cursor-not-allowed;
-}
+@layer components {
+  .uber-button {
+    @apply px-6 py-3 rounded-sm font-medium transition-all duration-300
+           bg-uber-black text-uber-white hover:bg-uber-dark-gray
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-uber-blue
+           active:transform active:scale-95;
+  }
 
-/* Modern card styles */
-.uber-card {
-  @apply bg-white dark:bg-uber-black rounded-md shadow-sm
-         border border-uber-light-gray dark:border-uber-dark-gray
-         p-6 transition-all duration-300;
-}
+  .uber-card {
+    @apply bg-white dark:bg-uber-black rounded-sm shadow-sm
+           border border-uber-light-gray dark:border-uber-dark-gray
+           p-6 transition-all duration-300
+           hover:shadow-md;
+  }
 
-/* Modern input styles */
-.uber-input {
-  @apply bg-white dark:bg-uber-black border border-uber-light-gray
-         dark:border-uber-dark-gray rounded-md px-4 py-3
-         focus:ring-2 focus:ring-uber-blue transition-all duration-300;
-}
+  .uber-input {
+    @apply bg-white dark:bg-uber-black border border-uber-light-gray
+           dark:border-uber-dark-gray rounded-sm px-4 py-3
+           focus:ring-2 focus:ring-uber-blue focus:border-transparent
+           transition-all duration-300
+           placeholder:text-gray-400;
+  }
 
-/* Gradient text */
-.gradient-text {
-  @apply bg-gradient-to-r from-uber-blue to-uber-success bg-clip-text text-transparent;
+  .gradient-text {
+    @apply bg-gradient-to-r from-uber-purple to-uber-blue 
+           bg-clip-text text-transparent font-bold;
+  }
+
+  .uber-badge {
+    @apply inline-flex items-center rounded-sm px-2.5 py-0.5 text-xs font-medium
+           transition-colors focus:outline-none focus:ring-2 focus:ring-uber-blue
+           focus:ring-offset-2;
+  }
+
+  .uber-badge-error {
+    @apply bg-uber-error text-white;
+  }
+
+  .uber-badge-success {
+    @apply bg-uber-success text-white;
+  }
+
+  .uber-badge-notification {
+    @apply bg-uber-notification text-uber-notification-text;
+  }
 }
