@@ -2,74 +2,60 @@
 
 Grant Route is a platform that helps Indian startups discover and apply for grants, tax incentives, and other benefits. By simplifying the process and offering tailored recommendations, it ensures startups can access valuable resources to grow and thrive.
 
-## Demo
-
-Try the mock-up version of [Grant Route](https://grantfinder-nectar.lovable.app/).
-
----
-
-## Problem
-
-Starting a business is challenging, with a high failure rate:
-- 30% of startups fail within three years.
-- 50% fail within five years.
-- 70% don’t make it past ten years.
-
-While numerous grants, tax incentives, and support programs exist to assist startups, these resources are:
-- Difficult to find.
-- Complex to understand.
-- Time-consuming to apply for.
-
-This often leads to missed opportunities for startups.
-
----
-
-## Solution
-
-Grant Route addresses this problem by providing:
-1. A centralized platform to track all relevant grants, tax incentives, and benefits for Indian startups.
-2. Personalized recommendations based on the startup’s location, sector, size, and growth stage.
-3. Notifications for new and emerging opportunities as they become available.
-4. Plans for future automation to streamline the application process.
-
----
-
 ## Features
 
 - **Personalized Recommendations**: Tailored lists of grants and incentives based on startup-specific information.
-- **Notifications**: Alerts for new or updated schemes that match a startup’s profile.
+- **Notifications**: Alerts for new or updated schemes that match a startup's profile.
 - **Comprehensive Resource Database**: A centralized collection of all applicable grants, tax benefits, and support schemes.
 - **Automation (Planned)**: Automatic application submissions for selected grants and schemes.
 
----
+## Quick Start
 
+```bash
+# Clone the repository
+git clone https://github.com/your-org/grant-route.git
 
-## Market Opportunity
+# Install dependencies
+npm install
 
-India’s startup ecosystem is growing rapidly:
-- Over 70,000 startups are currently active.
-- Government initiatives like Startup India and various tax incentives are designed to foster innovation and entrepreneurship.
+# Start development server
+npm run dev
+```
 
-Grant Route aims to bridge the gap between startups and these opportunities, unlocking significant value for the ecosystem.
+Visit `http://localhost:8080` to see the application running.
 
----
+## Development
 
-## Roadmap
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
-### Phase 1: Awareness and Research
-- Compile a database of grants, incentives, and benefits for startups.
-- Build awareness through content creation and social media.
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm test` - Run tests
+- `npm run lint` - Run linting
 
-### Phase 2: Launch the Platform
-- Release an MVP with personalized recommendations and notification features.
+## Deployment
 
-### Phase 3: Automation
-- Enable automated application submissions for grants and incentives.
+The application can be deployed to various platforms:
 
----
+### Vercel
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyour-org%2Fgrant-route)
 
-## Contribution
+### Netlify
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-org/grant-route)
 
-We welcome feedback and contributions to improve Grant Route. Feel free to open an issue or submit a pull request.
+## Contributing
 
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+- Documentation: [docs.grantroute.com](https://docs.grantroute.com)
+- Issues: [GitHub Issues](https://github.com/your-org/grant-route/issues)
+- Discord: [Join our community](https://discord.gg/grantroute)
