@@ -14,7 +14,7 @@ export interface Grant {
 export interface Resource {
   title: string;
   url: string;
-  category?: string;
+  category: string; // Made required to match usage
 }
 
 export interface Notification {
@@ -33,4 +33,11 @@ export interface StartupProfile {
   city: string;
   stage: string;
   previousApplications: string;
+}
+
+export interface CrawlResponse {
+  success: boolean;
+  status?: string;
+  data?: any;
+  error?: string;
 }

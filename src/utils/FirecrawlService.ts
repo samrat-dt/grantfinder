@@ -1,31 +1,64 @@
 import axios from 'axios';
 
-const FIRECRAWL_API_URL = 'https://api.firecrawl.com/v1/grants';
+interface CrawlResult {
+  success: boolean;
+  status?: string;
+  completed?: number;
+  total?: number;
+  creditsUsed?: number;
+  expiresAt?: string;
+  data?: any[];
+}
 
-export const fetchGrants = async () => {
-  try {
-    const response = await axios.get(FIRECRAWL_API_URL);
-    return response.data;
-  } catch (error) {
-    console.error('Error fetching grants from Firecrawl:', error);
-    throw new Error('Failed to fetch grants');
+export class FirecrawlService {
+  private static API_KEY = '';
+  private static BASE_URL = 'https://api.firecrawl.com/v1';
+
+  static setApiKey(key: string) {
+    this.API_KEY = key;
   }
-};
 
-export const normalizeGrantData = (grant) => ({
-  id: grant.id,
-  name: grant.name,
-  eligibility: grant.eligibility,
-  deadline: grant.deadline,
-  type: grant.type,
-  amount: grant.amount,
-  status: grant.status,
-  applicationLink: grant.applicationLink,
-  details: grant.details,
-  resources: grant.resources,
-});
+  static async fetchGrants(): Promise<CrawlResult> {
+    try {
+      const response = await axios.get(`${this.BASE_URL}/grants`, {
+        headers: {
+          Authorization: `Bearer ${this.API_KEY}`,
+        },
+      });
+      return {
+        success: true,
+        ...response.data,
+      };
+    } catch (error) {
+      console.error('Error fetching grants:', error);
+      return {
+        success: false,
+        status: 'error',
+      };
+    }
+  }
 
-export const getGrants = async () => {
-  const grants = await fetchGrants();
-  return grants.map(normalizeGrantData);
-};
+  static async crawlWebsite(url: string): Promise<CrawlResult> {
+    try {
+      const response = await axios.post(
+        `${this.BASE_URL}/crawl`,
+        { url },
+        {
+          headers: {
+            Authorization: `Bearer ${this.API_KEY}`,
+          },
+        }
+      );
+      return {
+        success: true,
+        ...response.data,
+      };
+    } catch (error) {
+      console.error('Error crawling website:', error);
+      return {
+        success: false,
+        status: 'error',
+      };
+    }
+  }
+}

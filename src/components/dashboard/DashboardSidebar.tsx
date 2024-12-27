@@ -8,7 +8,10 @@ export const DashboardSidebar = () => {
     <div className="space-y-6">
       <DeadlinesCard grants={mockGrants} />
       <NotificationsCard notifications={mockNotifications} />
-      <ResourceCard resources={resourceLinks} />
+      <ResourceCard resources={resourceLinks.map(link => ({
+        ...link,
+        category: link.category || 'General' // Ensure category is always present
+      }))} />
     </div>
   );
 };
