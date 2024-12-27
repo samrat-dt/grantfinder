@@ -6,155 +6,97 @@
 
 @layer base {
   :root {
-    --background: 220 14% 98%;
-    --background-secondary: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 98%;
+    --foreground: 240 3% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 3% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222 47% 11%;
+    --popover-foreground: 240 3% 12%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 3% 12%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 54%;
+    --accent: 212 100% 40%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 84%;
+    --input: 240 5% 84%;
+    --ring: 212 100% 40%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --background-secondary: 217 19% 27%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 19% 27%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 19% 27%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 217 19% 27%;
-    --accent-foreground: 210 40% 98%;
+    --background: 240 3% 12%;
+    --foreground: 0 0% 98%;
+    --card: 240 3% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 3% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 3% 12%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 212 100% 40%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62% 65%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 19% 27%;
-    --input: 217 19% 27%;
-    --ring: 224 76% 48%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 212 100% 40%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border antialiased;
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
   }
 
   h1 {
-    @apply text-heading-mobile md:text-heading-desktop font-bold tracking-tight;
+    @apply text-heading-mobile md:text-heading-desktop font-semibold;
   }
 
   h2 {
-    @apply text-subheading-mobile md:text-subheading-desktop font-bold tracking-tight;
+    @apply text-subheading-mobile md:text-subheading-desktop font-semibold;
   }
 
   p {
-    @apply text-body leading-relaxed;
+    @apply text-body text-foreground-secondary;
   }
 }
 
 @layer components {
-  .uber-button {
-    @apply px-6 py-3 rounded-button font-medium transition-all duration-300
+  .apple-button {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300
            bg-primary text-primary-foreground hover:bg-primary/90
-           disabled:opacity-50 disabled:cursor-not-allowed
-           focus:outline-none focus:ring-2 focus:ring-primary/50
-           active:transform active:scale-95;
-  }
-
-  .uber-button-secondary {
-    @apply px-6 py-3 rounded-button font-medium transition-all duration-300
-           border border-muted-foreground text-foreground
-           hover:bg-secondary hover:border-primary
            disabled:opacity-50 disabled:cursor-not-allowed
            focus:outline-none focus:ring-2 focus:ring-primary/50;
   }
 
-  .uber-card {
-    @apply bg-card rounded-card shadow-card
-           p-4 transition-all duration-300
-           hover:shadow-elevated;
+  .apple-card {
+    @apply bg-card rounded-2xl shadow-sm border border-border/5
+           p-6 transition-all duration-300
+           hover:shadow-md;
   }
 
-  .uber-input {
-    @apply w-full px-4 py-3 rounded-input
-           border border-border
+  .apple-input {
+    @apply w-full px-4 py-3 rounded-lg
+           bg-secondary border-transparent
            focus:ring-2 focus:ring-primary focus:border-transparent
            transition-all duration-300
            placeholder:text-muted-foreground;
-  }
-
-  .uber-table {
-    @apply w-full border-collapse;
-  }
-
-  .uber-table th {
-    @apply bg-muted px-4 py-3 text-left font-bold text-foreground;
-  }
-
-  .uber-table tr:nth-child(even) {
-    @apply bg-muted/50;
-  }
-
-  .uber-table td {
-    @apply px-4 py-3 border-t border-border;
-  }
-
-  .uber-modal-overlay {
-    @apply fixed inset-0 bg-foreground/50 backdrop-blur-sm
-           transition-opacity duration-300;
-  }
-
-  .uber-modal {
-    @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-           bg-background rounded-card shadow-elevated
-           p-6 max-w-md w-full mx-4
-           transition-all duration-300 animate-scale-in;
-  }
-
-  .uber-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
-  }
-
-  .uber-nav {
-    @apply fixed top-0 w-full bg-background shadow-elevated
-           transition-transform duration-300 z-50;
-  }
-
-  .uber-nav-mobile {
-    @apply fixed inset-y-0 left-0 w-64 bg-background shadow-elevated
-           transform transition-transform duration-300 z-50
-           lg:translate-x-0 lg:static lg:w-auto;
-  }
-
-  .sr-only {
-    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
-  }
-
-  .focus-visible {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary;
   }
 }

@@ -9,32 +9,32 @@ interface DashboardHeaderProps {
 export const DashboardHeader = ({ notificationCount, onEditProfile }: DashboardHeaderProps) => (
   <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 animate-fade-in">
     <div>
-      <div className="flex items-center gap-3">
-        <h1 className="text-3xl font-bold px-4 py-2 bg-uber-black rounded-sm">
-          <span className="bg-gradient-to-r from-[#9b87f5] to-[#276EF1] bg-clip-text text-transparent">
-            Grant Route
-          </span>
-        </h1>
-      </div>
-      <p className="text-gray-600 mt-2">Your startup growth journey starts here</p>
+      <h1 className="text-[40px] font-semibold tracking-tight text-primary">
+        Grants
+      </h1>
+      <p className="text-foreground-secondary mt-1">
+        Discover funding opportunities for your startup
+      </p>
     </div>
-    <div className="flex gap-2">
+    <div className="flex gap-3">
       <Button
         variant="outline"
         onClick={onEditProfile}
-        className="gap-2 hover:bg-uber-light-gray transition-colors rounded-sm group"
+        className="gap-2 hover:bg-secondary/80 transition-colors rounded-full group"
       >
         <Settings className="h-4 w-4 group-hover:rotate-90 transition-transform duration-300" />
         Edit Profile
       </Button>
       <Button
         variant="outline"
-        className="gap-2 hover:bg-uber-light-gray transition-colors rounded-sm"
+        className="gap-2 hover:bg-secondary/80 transition-colors rounded-full relative"
       >
         <Bell className="h-4 w-4" />
-        <span className="bg-uber-notification text-uber-notification-text rounded-sm px-2 py-0.5 text-xs">
-          {notificationCount}
-        </span>
+        {notificationCount > 0 && (
+          <span className="absolute -top-1 -right-1 bg-status-error text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {notificationCount}
+          </span>
+        )}
       </Button>
     </div>
   </div>
