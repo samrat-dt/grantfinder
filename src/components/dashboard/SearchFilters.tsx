@@ -44,7 +44,7 @@ export const SearchFilters = ({
       onValueChange={(value) => setSelectedType(value === "all" ? null : value)}
     >
       <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50 h-12 rounded-full">
-        <SelectValue placeholder="Grant Type" />
+        <SelectValue placeholder="All Types" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="all">All Types</SelectItem>
@@ -60,7 +60,7 @@ export const SearchFilters = ({
       onValueChange={(value) => setSelectedStatus(value === "all" ? null : value)}
     >
       <SelectTrigger className="w-[180px] bg-secondary border-none focus:ring-2 focus:ring-primary/50 h-12 rounded-full">
-        <SelectValue placeholder="Status" />
+        <SelectValue placeholder="All Statuses" />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value="all">All Statuses</SelectItem>

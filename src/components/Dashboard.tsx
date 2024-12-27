@@ -31,7 +31,7 @@ export const Dashboard = ({ onEditProfile }: DashboardProps) => {
   const displayedGrants = showAllGrants ? filteredGrants : filteredGrants.slice(0, 3);
 
   return (
-    <div className="container mx-auto p-6 space-y-6">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       <DashboardHeader 
         notificationCount={mockNotifications.length} 
         onEditProfile={onEditProfile}
@@ -43,23 +43,27 @@ export const Dashboard = ({ onEditProfile }: DashboardProps) => {
         <ResourceCard resources={resourceLinks} />
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm p-8">
-        <div className="space-y-6">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <h2 className="text-2xl font-semibold text-primary">Available Grants and Incentives</h2>
-            <SearchFilters
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              selectedType={selectedType}
-              setSelectedType={setSelectedType}
-              selectedStatus={selectedStatus}
-              setSelectedStatus={setSelectedStatus}
-              grantTypes={grantTypes}
-              statuses={statuses}
-            />
+      <div className="bg-white rounded-2xl shadow-sm p-8 border border-border/5">
+        <div className="space-y-8">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+            <h2 className="text-2xl font-semibold text-primary tracking-tight">
+              Available Grants and Incentives
+            </h2>
+            <div className="w-full lg:w-auto">
+              <SearchFilters
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                selectedType={selectedType}
+                setSelectedType={setSelectedType}
+                selectedStatus={selectedStatus}
+                setSelectedStatus={setSelectedStatus}
+                grantTypes={grantTypes}
+                statuses={statuses}
+              />
+            </div>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {displayedGrants.length > 0 ? (
               <>
                 {displayedGrants.map((grant) => (
@@ -69,7 +73,7 @@ export const Dashboard = ({ onEditProfile }: DashboardProps) => {
                   <div className="flex justify-center">
                     <button
                       onClick={() => setShowAllGrants(!showAllGrants)}
-                      className="text-primary hover:text-primary/80 font-medium"
+                      className="text-primary hover:text-primary/80 font-medium transition-colors"
                     >
                       {showAllGrants ? "Show Less" : "View All"}
                     </button>

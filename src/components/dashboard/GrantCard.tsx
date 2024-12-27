@@ -17,13 +17,12 @@ interface GrantCardProps {
 }
 
 export const GrantCard = ({ grant }: GrantCardProps) => (
-  <Card className="p-8 hover:shadow-lg transition-all duration-300 border-border/5 bg-card">
-    <div className="flex flex-col space-y-8">
-      {/* Header Section */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+  <Card className="p-8 hover:shadow-lg transition-all duration-300 border-border/5 bg-white">
+    <div className="flex flex-col space-y-6">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div className="space-y-2 flex-1">
-          <h3 className="text-xl font-semibold text-foreground tracking-tight">{grant.name}</h3>
-          <p className="text-foreground-secondary text-sm leading-relaxed">{grant.eligibility}</p>
+          <h3 className="text-xl font-semibold text-primary tracking-tight">{grant.name}</h3>
+          <p className="text-foreground-secondary text-[15px] leading-relaxed">{grant.eligibility}</p>
         </div>
         <Badge 
           variant={grant.status === "Closing Soon" ? "destructive" : "secondary"}
@@ -33,43 +32,39 @@ export const GrantCard = ({ grant }: GrantCardProps) => (
         </Badge>
       </div>
       
-      {/* Details Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <p className="text-sm text-foreground-secondary">Type</p>
-          <p className="font-medium text-foreground">{grant.type}</p>
+          <p className="font-medium text-primary">{grant.type}</p>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <p className="text-sm text-foreground-secondary">Amount</p>
-          <p className="font-medium text-foreground">{grant.amount}</p>
+          <p className="font-medium text-primary">{grant.amount}</p>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <p className="text-sm text-foreground-secondary">Deadline</p>
-          <p className="font-medium text-foreground">
+          <p className="font-medium text-primary">
             {new Date(grant.deadline).toLocaleDateString()}
           </p>
         </div>
       </div>
       
-      {/* Actions Section */}
-      <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between pt-2">
-        {grant.resources.length > 0 && (
-          <div className="flex flex-wrap gap-2 order-1">
-            {grant.resources.map((resource, index) => (
-              <Button
-                key={index}
-                variant="outline"
-                size="sm"
-                className="text-sm rounded-full hover:bg-secondary border-border/5 transition-colors duration-300"
-                onClick={() => window.open(resource.url, "_blank")}
-              >
-                {resource.title}
-              </Button>
-            ))}
-          </div>
-        )}
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
+        <div className="flex flex-wrap gap-2">
+          {grant.resources.map((resource, index) => (
+            <Button
+              key={index}
+              variant="outline"
+              size="sm"
+              className="text-sm rounded-full hover:bg-secondary border-border/5 transition-colors duration-300"
+              onClick={() => window.open(resource.url, "_blank")}
+            >
+              {resource.title}
+            </Button>
+          ))}
+        </div>
         
-        <div className="flex gap-3 order-2 sm:order-2 w-full sm:w-auto">
+        <div className="flex gap-3 w-full sm:w-auto">
           <Button
             className="flex-1 sm:flex-none bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 h-auto transition-all duration-300"
             onClick={() => window.open(grant.applicationLink, "_blank")}
