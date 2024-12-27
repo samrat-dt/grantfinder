@@ -27,48 +27,14 @@ export default {
           "dark-gray": "#4A4A4A",
           error: "#FF6F61",
           success: "#1AD760",
+          notification: "#FEF7CD",
+          "notification-text": "#000000",
         },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "#000000",
-          foreground: "#FFFFFF",
-        },
-        secondary: {
-          DEFAULT: "#FFFFFF",
-          foreground: "#000000",
-        },
-        accent: {
-          DEFAULT: "#276EF1",
-          foreground: "#FFFFFF",
-        },
-        destructive: {
-          DEFAULT: "#FF6F61",
-          foreground: "#FFFFFF",
-        },
-        muted: {
-          DEFAULT: "#E2E2E2",
-          foreground: "#4A4A4A",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
       },
       keyframes: {
         "accordion-down": {
