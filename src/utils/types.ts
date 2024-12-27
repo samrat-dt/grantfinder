@@ -14,7 +14,7 @@ export interface Grant {
 export interface Resource {
   title: string;
   url: string;
-  category: string; // Made required to match usage
+  category: string;
 }
 
 export interface Notification {

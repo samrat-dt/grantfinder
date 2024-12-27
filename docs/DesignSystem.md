@@ -16,15 +16,15 @@ We use Space Grotesk as our primary font family for its modern, geometric design
 ### Light Theme
 - Background: Pure White (#FFFFFF)
 - Foreground: Near Black (#0A0A0A)
-- Primary: Vibrant Green (#2DD4BF)
-- Accent: Electric Purple (#8B5CF6)
+- Primary: Vibrant Purple (#8B5CF6)
+- Accent: Electric Blue (#2DD4BF)
 - Muted: Light Gray (#F4F4F5)
 
 ### Dark Theme
 - Background: Rich Black (#0A0A0A)
 - Foreground: Off White (#F2F2F2)
-- Primary: Neon Green (#2DD4BF)
-- Accent: Bright Purple (#8B5CF6)
+- Primary: Neon Purple (#8B5CF6)
+- Accent: Bright Blue (#2DD4BF)
 - Muted: Dark Gray (#27272A)
 
 ## Components

@@ -8,12 +8,12 @@ Grant Route simplifies the journey of finding and applying for grants by:
 - 🎯 Providing personalized recommendations based on your startup's profile
 - 🔔 Sending real-time alerts when new opportunities match your criteria
 - 📚 Maintaining a comprehensive database of grants and incentives
-- 🤖 Using AI to automate grant discovery and matching (coming soon!)
+- 🤖 Using AI to automate grant discovery and matching
 
 ## 🚀 Getting Started
 
 ```bash
-# Clone this awesome project
+# Clone this repository
 git clone https://github.com/your-org/grant-route.git
 
 # Install dependencies
@@ -25,7 +25,7 @@ npm run dev
 
 Visit `http://localhost:8080` to see the magic happen! ✨
 
-## 🛠️ Built With Love Using
+## 🛠️ Built With
 
 - ⚛️ React 18 + TypeScript
 - 🎨 Tailwind CSS + shadcn/ui
@@ -49,7 +49,7 @@ Visit `http://localhost:8080` to see the magic happen! ✨
 
 ## 🤝 Contributing
 
-We love contributions! Whether it's fixing bugs, improving docs, or suggesting features, check out our [Contributing Guide](CONTRIBUTING.md) to get started.
+We love contributions! Check out our [Contributing Guide](CONTRIBUTING.md) to get started.
 
 ## 📝 License
 

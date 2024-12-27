@@ -14,11 +14,13 @@ export const mockGrants: Grant[] = [
     resources: [
       {
         title: "Application Guidelines",
-        url: "https://startupindia.gov.in/content/dam/invest-india/Templates/public/198117.pdf"
+        url: "https://startupindia.gov.in/content/dam/invest-india/Templates/public/198117.pdf",
+        category: "Documentation"
       },
       {
         title: "Eligibility Criteria",
-        url: "https://startupindia.gov.in/content/sih/en/government-schemes/seed-fund-scheme.html#eligibility"
+        url: "https://startupindia.gov.in/content/sih/en/government-schemes/seed-fund-scheme.html#eligibility",
+        category: "Documentation"
       }
     ]
   },
@@ -105,26 +107,26 @@ export const resourceLinks: Resource[] = [
   {
     title: "Guide to Startup India Registration",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
-    category: "Getting Started",
+    category: "Getting Started"
   },
   {
     title: "Tax Benefits Overview",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/tax-exemption.html",
-    category: "Finance",
+    category: "Finance"
   },
   {
     title: "State-wise Incentive Programs",
-    url: "https://www.startupindia.gov.in/content/sih/en/government-schemes.html",
-    category: "Regional",
+    url: "https://www.startupindia.gov.in/content/sih/en/government-schemes/html",
+    category: "Regional"
   },
   {
     title: "Application Guidelines",
     url: "https://www.startupindia.gov.in/content/sih/en/startupgov/startup-recognition-page.html",
-    category: "Documentation",
+    category: "Documentation"
   },
   {
     title: "Document Checklist",
     url: "https://www.startupindia.gov.in/content/dam/invest-india/Templates/public/Application_for_Recognition_Checklist.pdf",
-    category: "Documentation",
+    category: "Documentation"
   }
 ];
