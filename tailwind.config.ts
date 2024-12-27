@@ -19,6 +19,9 @@ export default {
     },
     extend: {
       colors: {
+        border: {
+          DEFAULT: "hsl(var(--border))",
+        },
         // Primary Colors
         primary: {
           DEFAULT: "#0F172A", // Dark Navy Blue
