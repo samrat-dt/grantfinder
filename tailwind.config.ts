@@ -22,62 +22,67 @@ export default {
         border: {
           DEFAULT: "hsl(var(--border))",
         },
-        // Primary Colors
-        primary: {
-          DEFAULT: "#0F172A", // Dark Navy Blue
-          accent: "#2563EB", // Vivid Blue
-          light: "#93C5FD", // Light Blue
-          dark: "#1E293B", // Slate Gray
-        },
-        // Background Colors
         background: {
-          DEFAULT: "#F8FAFC", // Light Grayish Blue
-          secondary: "#FFFFFF", // Pure White
+          DEFAULT: "hsl(var(--background))",
+          secondary: "hsl(var(--background-secondary))",
         },
-        // Text Colors
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+        },
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+          accent: "#2563EB",
+          light: "#93C5FD",
+          dark: "#1E293B",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
         text: {
-          DEFAULT: "#0F172A", // Dark
-          muted: "#64748B", // Muted Gray
+          DEFAULT: "#0F172A",
+          muted: "#64748B",
         },
-        // Status Colors
         status: {
           success: "#22C55E",
           warning: "#F59E0B",
           error: "#EF4444",
         },
-        // Uber Design System Colors
-        uber: {
-          black: "#000000",
-          white: "#FFFFFF",
-          blue: "#276EF1",
-          purple: "#9B87F5",
-          "light-gray": "#E2E2E2",
-          "dark-gray": "#4A4A4A",
-          error: "#FF1744",
-          success: "#1AD760",
-          notification: "#FEF7CD",
-          "notification-text": "#000000",
-        },
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-      },
-      fontSize: {
-        // Desktop
-        "heading-desktop": ["3rem", { lineHeight: "1.2" }],
-        "subheading-desktop": ["2rem", { lineHeight: "1.3" }],
-        // Mobile
-        "heading-mobile": ["2rem", { lineHeight: "1.2" }],
-        "subheading-mobile": ["1.5rem", { lineHeight: "1.3" }],
-        // Body and Caption
-        body: ["1rem", { lineHeight: "1.5" }],
-        caption: ["0.875rem", { lineHeight: "1.4" }],
       },
       borderRadius: {
-        DEFAULT: "0.5rem",
+        DEFAULT: "var(--radius)",
         button: "0.5rem",
         card: "0.75rem",
         input: "0.5rem",
+      },
+      fontSize: {
+        "heading-desktop": ["3rem", { lineHeight: "1.2" }],
+        "subheading-desktop": ["2rem", { lineHeight: "1.3" }],
+        "heading-mobile": ["2rem", { lineHeight: "1.2" }],
+        "subheading-mobile": ["1.5rem", { lineHeight: "1.3" }],
+        body: ["1rem", { lineHeight: "1.5" }],
+        caption: ["0.875rem", { lineHeight: "1.4" }],
       },
       boxShadow: {
         card: "0px 4px 6px #E2E8F0",
