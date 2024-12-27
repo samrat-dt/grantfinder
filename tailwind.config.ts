@@ -65,6 +65,10 @@ export default {
           error: "#FF3B30",
         },
       },
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+      },
       borderRadius: {
         DEFAULT: "var(--radius)",
         button: "1rem",
@@ -78,10 +82,6 @@ export default {
         "subheading-mobile": ["1.5rem", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
         body: ["1rem", { lineHeight: "1.5", letterSpacing: "-0.01em" }],
         caption: ["0.875rem", { lineHeight: "1.4", letterSpacing: "-0.01em" }],
-      },
-      fontFamily: {
-        sans: ["-apple-system", "BlinkMacSystemFont", "SF Pro Text", "Helvetica Neue", "sans-serif"],
-        display: ["SF Pro Display", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
     },
   },
