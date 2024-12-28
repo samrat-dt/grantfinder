@@ -18,6 +18,13 @@ export default {
       },
     },
     extend: {
+      fontSize: {
+        'heading-desktop': ['48px', '1.1'],
+        'heading-mobile': ['32px', '1.2'],
+        'subheading-desktop': ['32px', '1.2'],
+        'subheading-mobile': ['24px', '1.3'],
+        'body': ['16px', '1.5'],
+      },
       colors: {
         border: "hsl(var(--border))",
         background: {

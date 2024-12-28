@@ -42,18 +42,6 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
   }
-
-  h1 {
-    @apply text-heading-mobile md:text-heading-desktop font-semibold text-white;
-  }
-
-  h2 {
-    @apply text-subheading-mobile md:text-subheading-desktop font-semibold text-white;
-  }
-
-  p {
-    @apply text-body text-foreground-secondary;
-  }
 }
 
 @layer components {
@@ -70,15 +58,15 @@
   }
 
   .status-open {
-    @apply bg-status-success text-white;
+    @apply bg-[#34C759] text-white;
   }
 
   .status-closing {
-    @apply bg-status-warning text-white;
+    @apply bg-[#007AFF] text-white;
   }
 
   .status-closed {
-    @apply bg-status-error text-white;
+    @apply bg-[#ea384c] text-white;
   }
 
   .hover-highlight {
