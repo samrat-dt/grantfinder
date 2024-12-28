@@ -12,7 +12,13 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
       screens: {
         "2xl": "1400px",
       },
@@ -36,9 +42,9 @@ export default {
           secondary: "#4B5563",
         },
         primary: {
-          DEFAULT: "#111111",
+          DEFAULT: "#0EA5E9",
           foreground: "#FFFFFF",
-          accent: "#2563EB",
+          accent: "#1EAEDB",
           light: "#34C759",
           dark: "#DC2626",
         },
@@ -55,8 +61,9 @@ export default {
           foreground: "#6B7280",
         },
         accent: {
-          DEFAULT: "#2563EB",
+          DEFAULT: "#0EA5E9",
           foreground: "#FFFFFF",
+          hover: "#1EAEDB",
         },
         card: {
           DEFAULT: "#FFFFFF",
@@ -68,9 +75,14 @@ export default {
         },
         status: {
           success: "#34C759",
-          warning: "#2563EB",
+          warning: "#0EA5E9",
           error: "#DC2626",
         },
+      },
+      spacing: {
+        'section': '6rem',
+        'component': '2rem',
+        'element': '1rem',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -85,6 +97,7 @@ export default {
       boxShadow: {
         'card': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
         'hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        'elevated': '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
       },
     },
   },

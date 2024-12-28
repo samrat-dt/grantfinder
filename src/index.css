@@ -12,19 +12,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 199 89% 48%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 199 89% 48%;
     --radius: 0.5rem;
   }
 }
@@ -46,7 +46,9 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card shadow-card border border-border/10 hover:shadow-hover transition-all duration-300;
+    @apply bg-card shadow-card border border-border/10 
+           hover:shadow-hover transition-all duration-300
+           p-6 rounded-xl;
   }
 
   .neo-blur {
@@ -54,31 +56,34 @@
   }
 
   .status-badge {
-    @apply px-3 py-1 rounded-full text-sm font-medium;
+    @apply px-4 py-1.5 rounded-full text-sm font-medium
+           shadow-sm transition-all duration-300;
   }
 
   .status-open {
-    @apply bg-[#34C759] text-white;
+    @apply bg-[#34C759] text-white shadow-sm hover:shadow-md;
   }
 
   .status-closing {
-    @apply bg-[#2563EB] text-white;
+    @apply bg-[#0EA5E9] text-white shadow-sm hover:shadow-md;
   }
 
   .status-closed {
-    @apply bg-[#DC2626] text-white;
+    @apply bg-[#DC2626] text-white shadow-sm hover:shadow-md;
   }
 
   .hover-highlight {
-    @apply hover:bg-black hover:text-white transition-colors duration-300;
+    @apply hover:bg-primary hover:text-white 
+           transition-colors duration-300 rounded-md px-3 py-1.5;
   }
 
   .apple-button {
     @apply px-6 py-3 rounded-full font-medium transition-all duration-300
-           bg-accent text-accent-foreground hover:bg-accent/90
+           bg-primary text-primary-foreground 
+           hover:bg-primary/90 hover:shadow-hover
            disabled:opacity-50 disabled:cursor-not-allowed
-           focus:outline-none focus:ring-2 focus:ring-accent/50
-           shadow-card hover:shadow-hover;
+           focus:outline-none focus:ring-2 focus:ring-primary/50
+           shadow-card;
   }
 
   .apple-card {
@@ -90,8 +95,20 @@
   .apple-input {
     @apply w-full px-4 py-3 rounded-lg
            bg-secondary border-border/10
-           focus:ring-2 focus:ring-accent/50 focus:border-border/20
+           focus:ring-2 focus:ring-primary/50 focus:border-border/20
            transition-all duration-300
            placeholder:text-muted-foreground;
+  }
+
+  .section-padding {
+    @apply py-section px-component;
+  }
+
+  .component-padding {
+    @apply p-component;
+  }
+
+  .element-padding {
+    @apply p-element;
   }
 }

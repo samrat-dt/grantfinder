@@ -1,8 +1,8 @@
-# Uber-Inspired Design System
+# Grant Route Design System
 
 ## Typography
 
-We use Inter as our primary font family, following Uber's design principles for clean, modern typography.
+We use Inter as our primary font family for clean, modern typography.
 
 ### Font Sizes
 - Heading (Desktop): 48px / 3rem
@@ -21,85 +21,116 @@ We use Inter as our primary font family, following Uber's design principles for 
 ## Color Palette
 
 ### Primary Colors
-- Base: #0F172A (Dark Navy Blue)
-- Accent: #2563EB (Vivid Blue)
-- Light: #93C5FD (Light Blue)
-- Dark: #1E293B (Slate Gray)
+- Primary: #0EA5E9 (Ocean Blue)
+- Accent: #1EAEDB (Bright Blue)
+- Success: #34C759 (Green)
+- Error: #DC2626 (Red)
 
 ### Background Colors
-- Primary: #F8FAFC (Light Grayish Blue)
-- Secondary: #FFFFFF (Pure White)
+- Primary: #FFFFFF (Pure White)
+- Secondary: #F8F9FA (Light Gray)
 
 ### Text Colors
-- Dark: #0F172A
-- Muted: #64748B
+- Primary: #111111 (Near Black)
+- Secondary: #4B5563 (Gray)
+- Muted: #6B7280 (Light Gray)
 
 ### Status Colors
-- Success: #22C55E
-- Warning: #F59E0B
-- Error: #EF4444
+- Success: #34C759 (Green)
+- Warning: #0EA5E9 (Blue)
+- Error: #DC2626 (Red)
+
+## Spacing System
+
+### Layout Spacing
+- Section: 6rem (96px)
+- Component: 2rem (32px)
+- Element: 1rem (16px)
+
+### Container Padding
+- Mobile: 1rem
+- Tablet: 2rem
+- Desktop: 4rem
+- Large Desktop: 5rem
+- Extra Large: 6rem
 
 ## Components
 
-### Buttons
-- Rounded corners (8px)
-- Clear hover and active states
-- Primary and Secondary variants
-- Smooth transitions
-
 ### Cards
-- Rounded corners (12px)
-- Subtle shadows
-- Hover elevation
-- Clean backgrounds
+- Background: White
+- Border Radius: 1rem (16px)
+- Shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1)
+- Hover Shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1)
+- Border: 1px solid rgba(0, 0, 0, 0.1)
+- Padding: 1.5rem (24px)
 
-### Forms
-- Rounded corners (8px)
-- Clear focus states
-- Consistent validation feedback
-- Modern input styling
+### Buttons
+- Border Radius: 0.75rem (12px)
+- Padding: 0.75rem 1.5rem
+- Font Weight: Medium (500)
+- Transition: 300ms all
+- Shadow on Hover
 
-### Tables
-- Alternating row colors
-- Clear headers
-- Compact but readable
-- Responsive design
+### Status Badges
+- Border Radius: Full
+- Padding: 0.375rem 1rem
+- Font Size: 14px
+- Font Weight: Medium (500)
+- Shadow on Hover
 
 ## Animations
 
-### Micro-interactions
-- Button hover/active states
-- Card elevation changes
-- Form focus states
-- Modal transitions
+### Transitions
+- Duration: 300ms
+- Timing: Ease-in-out
+- Properties: all, colors, shadow, transform
 
-### Motion Principles
-- Natural and fluid
-- Purpose-driven
-- Consistent timing
-- Responsive feedback
+### Hover States
+- Scale: 1.02
+- Shadow Increase
+- Color Shift
+- Smooth Transition
 
 ## Accessibility
 
-- WCAG 2.1 AA compliant
-- High contrast ratios
-- Keyboard navigation
-- Focus indicators
-- Screen reader support
+- WCAG 2.1 AA Compliant
+- Minimum Color Contrast: 4.5:1
+- Focus States Visible
+- Semantic HTML Structure
+- Screen Reader Friendly
 
 ## Responsive Design
 
 Mobile-first approach with breakpoints:
-- sm: 640px (Mobile)
-- md: 768px (Tablet)
-- lg: 1024px (Desktop)
-- xl: 1280px (Large Desktop)
-- 2xl: 1400px (Extra Large Desktop)
+- sm: 640px
+- md: 768px
+- lg: 1024px
+- xl: 1280px
+- 2xl: 1400px
 
 ## Best Practices
 
-1. Use consistent spacing
-2. Maintain high contrast
-3. Keep animations subtle
-4. Follow mobile-first approach
-5. Ensure keyboard accessibility
+1. Consistent Spacing
+   - Use predefined spacing values
+   - Maintain rhythm between components
+   - Respect component hierarchy
+
+2. Visual Hierarchy
+   - Clear heading structure
+   - Consistent text sizes
+   - Proper spacing between elements
+
+3. Interactive Elements
+   - Clear hover states
+   - Visible focus indicators
+   - Smooth transitions
+
+4. Component Layout
+   - Logical grouping
+   - Proper alignment
+   - Balanced white space
+
+5. Accessibility
+   - High contrast ratios
+   - Keyboard navigation
+   - Screen reader support
