@@ -9,6 +9,8 @@ Grant Route simplifies the journey of finding and applying for grants by:
 - 🔔 Sending real-time alerts when new opportunities match your criteria
 - 📚 Maintaining a comprehensive database of grants and incentives
 - 🤖 Using AI to automate grant discovery and matching
+- 📊 Offering detailed analytics and tracking
+- 🔒 Ensuring secure data handling
 
 ## 🚀 Getting Started
 
@@ -32,6 +34,8 @@ Visit `http://localhost:8080` to see the magic happen! ✨
 - 🔄 TanStack Query
 - ⚡ Vite
 - 🧪 Vitest + React Testing Library
+- 🔒 Zod for validation
+- 📊 Recharts for analytics
 
 ## 🌈 Features
 
@@ -40,12 +44,16 @@ Visit `http://localhost:8080` to see the magic happen! ✨
 - ✅ Real-time notifications
 - ✅ Multi-step registration
 - ✅ Comprehensive resource database
+- ✅ Secure data handling
+- ✅ Performance optimization
+- ✅ Responsive design
 
 ### Coming Soon
 - 🔄 Automated grant discovery
 - 📝 One-click applications
-- 📊 Analytics dashboard
+- 📊 Enhanced analytics dashboard
 - 🤝 Mentor matching
+- 🌐 International expansion
 
 ## 🤝 Contributing
 

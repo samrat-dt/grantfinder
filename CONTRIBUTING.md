@@ -26,6 +26,24 @@ We use GitHub to host code, track issues and feature requests, and accept pull r
 - Write meaningful commit messages
 - Document new code
 - Add tests for new features
+- Use Tailwind CSS for styling
+- Follow component-based architecture
+- Implement responsive design patterns
+
+## Testing
+
+- Write unit tests for components
+- Add integration tests for workflows
+- Include E2E tests for critical paths
+- Maintain test coverage above 80%
+
+## Documentation
+
+- Update documentation for new features
+- Include JSDoc comments for functions
+- Add TypeScript types and interfaces
+- Keep the changelog updated
+- Document breaking changes
 
 ## License
 
