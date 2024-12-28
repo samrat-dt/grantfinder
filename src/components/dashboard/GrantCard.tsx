@@ -35,7 +35,7 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
       <div className="flex flex-col space-y-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-2 flex-1">
-            <h3 className="text-xl font-semibold text-foreground tracking-tight hover-highlight">{grant.name}</h3>
+            <h3 className="text-xl font-semibold text-foreground tracking-tight">{grant.name}</h3>
             <p className="text-foreground-secondary text-[15px] leading-relaxed">{grant.eligibility}</p>
           </div>
           <Badge className={`status-badge ${getStatusClass(grant.status)}`}>
@@ -46,15 +46,15 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Type</p>
-            <p className="font-medium text-foreground hover-highlight">{grant.type}</p>
+            <p className="font-medium text-foreground">{grant.type}</p>
           </div>
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Amount</p>
-            <p className="font-medium text-foreground hover-highlight">{grant.amount}</p>
+            <p className="font-medium text-foreground">{grant.amount}</p>
           </div>
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Deadline</p>
-            <p className="font-medium text-foreground hover-highlight">
+            <p className="font-medium text-foreground">
               {new Date(grant.deadline).toLocaleDateString()}
             </p>
           </div>

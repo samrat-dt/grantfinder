@@ -36,7 +36,7 @@ const Index = () => {
             <div className="text-center mb-8 animate-fade-in">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <img src="/logo.svg" alt="Grant Route" className="h-12 w-12" />
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <h1 className="text-4xl font-bold text-primary">
                   Grant Route
                 </h1>
               </div>
