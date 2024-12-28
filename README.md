@@ -67,7 +67,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 📚 [Documentation](https://docs.grantroute.com)
 - 🐛 [Report Issues](https://github.com/your-org/grant-route/issues)
-- 💬 [Join our Discord](https://discord.gg/grantroute)
+- 💬 [Join our Community](https://discord.gg/grantroute)
 
 ## 🚀 Our Vision
 
