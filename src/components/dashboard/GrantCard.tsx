@@ -35,7 +35,7 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
       <div className="flex flex-col space-y-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-2 flex-1">
-            <h3 className="text-xl font-semibold text-foreground tracking-tight">{grant.name}</h3>
+            <h3 className="text-xl font-semibold text-black tracking-tight">{grant.name}</h3>
             <p className="text-foreground-secondary text-[15px] leading-relaxed">{grant.eligibility}</p>
           </div>
           <Badge className={`status-badge ${getStatusClass(grant.status)}`}>
@@ -46,15 +46,15 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Type</p>
-            <p className="font-medium text-foreground">{grant.type}</p>
+            <p className="font-medium text-black">{grant.type}</p>
           </div>
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Amount</p>
-            <p className="font-medium text-foreground">{grant.amount}</p>
+            <p className="font-medium text-black">{grant.amount}</p>
           </div>
           <div className="space-y-1.5">
             <p className="text-sm text-foreground-secondary">Deadline</p>
-            <p className="font-medium text-foreground">
+            <p className="font-medium text-black">
               {new Date(grant.deadline).toLocaleDateString()}
             </p>
           </div>
@@ -67,7 +67,7 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
                 key={index}
                 variant="outline"
                 size="sm"
-                className="text-sm rounded-full hover-highlight border-white/10"
+                className="text-sm rounded-full hover:bg-black hover:text-white transition-colors border-white/10"
                 onClick={() => window.open(resource.url, "_blank")}
               >
                 {resource.title}
@@ -77,7 +77,7 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
           
           <div className="flex gap-3 w-full sm:w-auto">
             <Button
-              className="flex-1 sm:flex-none bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-2 h-10 transition-all duration-300"
+              className="flex-1 sm:flex-none bg-black hover:bg-black/90 text-white rounded-full px-6 py-2 h-10 transition-all duration-300"
               onClick={() => window.open(grant.applicationLink, "_blank")}
             >
               Apply Now
@@ -88,14 +88,16 @@ export const GrantCard = ({ grant }: GrantCardProps) => {
               <DialogTrigger asChild>
                 <Button 
                   variant="outline" 
-                  className="rounded-full aspect-square p-0 w-10 h-10 border-white/10 hover-highlight"
+                  className="rounded-full aspect-square p-0 w-10 h-10 border-white/10 hover:bg-black hover:text-white transition-colors"
                 >
                   <Info className="h-4 w-4" />
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-[600px] p-8 bg-card border-white/10">
                 <DialogHeader className="space-y-3">
-                  <DialogTitle className="text-2xl font-semibold tracking-tight text-white">{grant.name}</DialogTitle>
+                  <DialogTitle className="text-2xl font-semibold tracking-tight text-black">
+                    {grant.name}
+                  </DialogTitle>
                   <DialogDescription className="text-foreground-secondary">
                     Grant Details
                   </DialogDescription>
