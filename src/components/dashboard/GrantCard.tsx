@@ -16,79 +16,90 @@ interface GrantCardProps {
   grant: Grant;
 }
 
-export const GrantCard = ({ grant }: GrantCardProps) => (
-  <Card className="p-6 hover:shadow-lg transition-all duration-300 border-gray-100/10">
-    <div className="flex flex-col space-y-6">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div className="space-y-2 flex-1">
-          <h3 className="text-xl font-semibold text-foreground tracking-tight">{grant.name}</h3>
-          <p className="text-foreground-secondary text-[15px] leading-relaxed">{grant.eligibility}</p>
-        </div>
-        <Badge 
-          variant={grant.status === "Closing Soon" ? "destructive" : "secondary"}
-          className="rounded-full px-4 py-1 whitespace-nowrap text-sm font-medium"
-        >
-          {grant.status}
-        </Badge>
-      </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="space-y-1.5">
-          <p className="text-sm text-foreground-secondary">Type</p>
-          <p className="font-medium text-foreground">{grant.type}</p>
-        </div>
-        <div className="space-y-1.5">
-          <p className="text-sm text-foreground-secondary">Amount</p>
-          <p className="font-medium text-foreground">{grant.amount}</p>
-        </div>
-        <div className="space-y-1.5">
-          <p className="text-sm text-foreground-secondary">Deadline</p>
-          <p className="font-medium text-foreground">
-            {new Date(grant.deadline).toLocaleDateString()}
-          </p>
-        </div>
-      </div>
-      
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
-        <div className="flex flex-wrap gap-2">
-          {grant.resources.map((resource, index) => (
-            <Button
-              key={index}
-              variant="outline"
-              size="sm"
-              className="text-sm rounded-full hover:bg-secondary border-gray-100/10 transition-colors duration-300"
-              onClick={() => window.open(resource.url, "_blank")}
-            >
-              {resource.title}
-            </Button>
-          ))}
+export const GrantCard = ({ grant }: GrantCardProps) => {
+  const getStatusClass = (status: string) => {
+    switch (status) {
+      case "Open":
+        return "status-open";
+      case "Closing Soon":
+        return "status-closing";
+      case "Closed":
+        return "status-closed";
+      default:
+        return "bg-muted text-muted-foreground";
+    }
+  };
+
+  return (
+    <Card className="glass-card">
+      <div className="flex flex-col space-y-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div className="space-y-2 flex-1">
+            <h3 className="text-xl font-semibold text-foreground tracking-tight hover-highlight">{grant.name}</h3>
+            <p className="text-foreground-secondary text-[15px] leading-relaxed">{grant.eligibility}</p>
+          </div>
+          <Badge className={`status-badge ${getStatusClass(grant.status)}`}>
+            {grant.status}
+          </Badge>
         </div>
         
-        <div className="flex gap-3 w-full sm:w-auto">
-          <Button
-            className="flex-1 sm:flex-none bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-2 h-10 transition-all duration-300"
-            onClick={() => window.open(grant.applicationLink, "_blank")}
-          >
-            Apply Now
-            <ChevronRight className="ml-2 h-4 w-4" />
-          </Button>
-          
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button 
-                variant="outline" 
-                className="rounded-full aspect-square p-0 w-10 h-10 border-gray-100/10 hover:bg-secondary transition-all duration-300"
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="space-y-1.5">
+            <p className="text-sm text-foreground-secondary">Type</p>
+            <p className="font-medium text-foreground hover-highlight">{grant.type}</p>
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-sm text-foreground-secondary">Amount</p>
+            <p className="font-medium text-foreground hover-highlight">{grant.amount}</p>
+          </div>
+          <div className="space-y-1.5">
+            <p className="text-sm text-foreground-secondary">Deadline</p>
+            <p className="font-medium text-foreground hover-highlight">
+              {new Date(grant.deadline).toLocaleDateString()}
+            </p>
+          </div>
+        </div>
+        
+        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
+          <div className="flex flex-wrap gap-2">
+            {grant.resources.map((resource, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                size="sm"
+                className="text-sm rounded-full hover-highlight border-white/10"
+                onClick={() => window.open(resource.url, "_blank")}
               >
-                <Info className="h-4 w-4" />
+                {resource.title}
               </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[600px] p-8">
-              <DialogHeader className="space-y-3">
-                <DialogTitle className="text-2xl font-semibold tracking-tight">{grant.name}</DialogTitle>
-                <DialogDescription className="text-foreground-secondary">
-                  Grant Details
-                </DialogDescription>
-              </DialogHeader>
+            ))}
+          </div>
+          
+          <div className="flex gap-3 w-full sm:w-auto">
+            <Button
+              className="flex-1 sm:flex-none bg-accent hover:bg-accent/90 text-white rounded-full px-6 py-2 h-10 transition-all duration-300"
+              onClick={() => window.open(grant.applicationLink, "_blank")}
+            >
+              Apply Now
+              <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="rounded-full aspect-square p-0 w-10 h-10 border-white/10 hover-highlight"
+                >
+                  <Info className="h-4 w-4" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[600px] p-8 bg-card border-white/10">
+                <DialogHeader className="space-y-3">
+                  <DialogTitle className="text-2xl font-semibold tracking-tight text-white">{grant.name}</DialogTitle>
+                  <DialogDescription className="text-foreground-secondary">
+                    Grant Details
+                  </DialogDescription>
+                </DialogHeader>
               <div className="space-y-8 py-6">
                 <div className="space-y-3">
                   <h4 className="font-medium text-foreground">Eligibility Criteria</h4>
@@ -147,10 +158,11 @@ export const GrantCard = ({ grant }: GrantCardProps) => (
                   </div>
                 )}
               </div>
-            </DialogContent>
-          </Dialog>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
       </div>
-    </div>
-  </Card>
-);
+    </Card>
+  );
+};
